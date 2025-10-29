@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9                       Breadth first search and Depth First Search\par
+\par
+graph = \{\par
+    '5': ['3', '7'],\par
+    '3': ['2', '4'],\par
+    '7': ['8'],\par
+    '2': [],\par
+    '4': ['8'],\par
+    '8': []\par
+\}\par
+\par
+visited = []\par
+queue = []\par
+\par
+def bfs(visited, graph, node):\par
+    visited.append(node)\par
+    queue.append(node)\par
+    while queue:\par
+        m = queue.pop(0)\par
+        print(m, end=" ")\par
+        for neighbour in graph[m]:\par
+            if neighbour not in visited:\par
+                visited.append(neighbour)\par
+                queue.append(neighbour)\par
+\par
+print("Following is the Breadth-First Search")\par
+bfs(visited, graph, '5')\par
+\par
+\par
+output:\par
+Following is the Breadth-First Search\par
+5 3 7 2 4 8\par
+}
